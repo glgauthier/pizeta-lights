@@ -36,7 +36,7 @@ $(function(){
   });
   var canvas = new fabric.Canvas('room');
   canvas.backgroundColor = 'rgb(100,100,255)';
-​
+
   function addLight(light){
     var circle = new fabric.Circle({ radius: 15, fill: light.color.toRgb()});
     circle.top = light.row * 50 + 20;
