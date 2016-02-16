@@ -11,7 +11,7 @@ $(function(){
       setColors(color);
     }
   });
-​
+
   $.ajax({
     url: 'http://192.168.1.218/api/3fb4730a7fe0697fa0b376570b9b3',
     success: function(data){
