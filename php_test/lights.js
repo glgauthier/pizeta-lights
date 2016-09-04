@@ -13,7 +13,7 @@ $(function(){
   });
 
   $.ajax({
-    url: 'http://192.168.0.253/api/3fb4730a7fe0697fa0b376570b9b3',
+    url: 'http://192.168.0.21/api/3fb4730a7fe0697fa0b376570b9b3',
     success: function(data){
       $("#status").text('Connected!');
       for (var i in data.lights) {
@@ -66,7 +66,7 @@ $(function(){
         var e = this.color.getSource(), hsl = this.color._rgbToHsl(e[0], e[1], e[2]);
         var payload = {"on":true, "bri":~~(hsl[2]*2.54), "hue":(hsl[0]*182),"sat":~~(hsl[1]*2.54)};
         $.ajax({
-          url: '//192.168.0.253/api/3fb4730a7fe0697fa0b376570b9b3/lights/'+this.id+'/state',
+          url: '//192.168.0.21/api/3fb4730a7fe0697fa0b376570b9b3/lights/'+this.id+'/state',
           method: 'PUT',
           data: JSON.stringify(payload)
         });
@@ -103,7 +103,7 @@ $(function(){
       var e = color.getSource(), hsl = color._rgbToHsl(e[0], e[1], e[2]);
       var payload = {"on":true, "bri":~~(hsl[2]*2.54), "hue":(hsl[0]*182),"sat":~~(hsl[1]*2.54)};
       $.ajax({
-        url: '//192.168.0.253/api/3fb4730a7fe0697fa0b376570b9b3/groups/'+$('#groups :checked').val()+'/action',
+        url: '//192.168.0.21/api/3fb4730a7fe0697fa0b376570b9b3/groups/'+$('#groups :checked').val()+'/action',
         method: 'PUT',
         data: JSON.stringify(payload)
       });
